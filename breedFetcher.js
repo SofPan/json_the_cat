@@ -1,7 +1,7 @@
 const request = require('request');
 const userRequest = process.argv.slice(2);
 
-request(`https://api.thecaapi.com/v1/breeds/search?q=${userRequest}`, (error, response, body) => {
+request(`https://api.thecatapi.com/v1/breeds/search?q=${userRequest}`, (error, response, body) => {
   if (error) {
     console.log("error:", error.message);
     console.log('statusCode:', response && response.statusCode);
