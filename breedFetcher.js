@@ -5,7 +5,12 @@ request(`https://api.thecatapi.com/v1/breeds/search?q=${userRequest}`, (error, r
   if (error) {
     console.log("error:", error);
     console.log('statusCode:', response && response.statusCode);
+    return;
   }
   const data = JSON.parse(body);
-  console.log(data[0].description);
+  try {
+    console.log(data[0].description);
+  } catch (err) {
+    console.log(err.message);
+  }
 });
